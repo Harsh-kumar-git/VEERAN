@@ -245,7 +245,7 @@ export default function ProductsAdmin() {
                     </td>
                     <td className="px-6 py-4 font-medium text-stone-900">{product.name}</td>
                     <td className="px-6 py-4">{category ? category.name : 'Unknown'}</td>
-                    <td className="px-6 py-4">${product.price}</td>
+                    <td className="px-6 py-4">₹{product.price}</td>
                     <td className="px-6 py-4">
                       <button 
                         onClick={() => handleToggleState(product.id, 'featured', product.featured)}

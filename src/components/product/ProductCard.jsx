@@ -35,7 +35,7 @@ export default function ProductCard({ product, category }) {
           </p>
           <div className="flex justify-between items-start gap-4">
             <h3 className="text-lg font-medium text-stone-900 leading-tight group-hover:text-stone-700 transition-colors">{product.name}</h3>
-            <p className="text-lg font-medium text-stone-900 whitespace-nowrap">${product.price}</p>
+            <p className="text-lg font-medium text-stone-900 whitespace-nowrap">₹{product.price}</p>
           </div>
         </div>
         
