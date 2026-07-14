@@ -96,10 +96,6 @@ export default function Footer() {
             &copy; {currentYear} {siteConfig.siteName}. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            <Link to="/admin" className="hover:text-stone-900 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-900 rounded-sm">
-              Admin Portal
-            </Link>
-            <span className="text-stone-300">|</span>
             <a href="#" className="hover:text-stone-900 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-900 rounded-sm">Privacy Policy</a>
             <a href="#" className="hover:text-stone-900 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-900 rounded-sm">Terms of Service</a>
           </div>

@@ -4,11 +4,13 @@ import { processImageFile } from '../../utils/imageProcess';
 import { getWhatsAppLink } from '../../utils/whatsapp';
 import Modal from '../../components/admin/Modal';
 import Toast from '../../components/admin/Toast';
-import { Plus, Edit2, Trash2, Image as ImageIcon, Upload, Link as LinkIcon, Copy, X } from 'lucide-react';
+import { Plus, Edit2, Trash2, Image as ImageIcon, Upload, Link as LinkIcon, Copy, X, Search } from 'lucide-react';
 
 export default function ProductsAdmin() {
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
+  const [selectedCategoryId, setSelectedCategoryId] = useState('all');
+  const [searchQuery, setSearchQuery] = useState('');
   
   // Modals & Toast State
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -191,6 +193,14 @@ export default function ProductsAdmin() {
     }, 400);
   };
 
+  const filteredProducts = products.filter((product) => {
+    const matchesCategory = selectedCategoryId === 'all' || product.categoryId === selectedCategoryId;
+    const matchesSearch = searchQuery.trim() === '' || 
+      product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      (product.description && product.description.toLowerCase().includes(searchQuery.toLowerCase()));
+    return matchesCategory && matchesSearch;
+  });
+
   return (
     <div>
       <Toast message={toast.message} type={toast.type} onClose={() => setToast({ message: '', type: 'success' })} />
@@ -209,6 +219,61 @@ export default function ProductsAdmin() {
         </button>
       </div>
 
+      {/* Category Tabs & Search Bar */}
+      <div className="flex flex-col md:flex-row md:items-center justify-between border-b border-stone-200 mb-6 gap-4">
+        {/* Tabs */}
+        <div className="flex flex-wrap gap-1 -mb-[1px] overflow-x-auto scrollbar-none">
+          <button
+            onClick={() => { setSelectedCategoryId('all'); setSearchQuery(''); }}
+            className={`pb-3 px-4 text-sm font-medium border-b-2 transition-all whitespace-nowrap ${
+              selectedCategoryId === 'all'
+                ? 'border-stone-900 text-stone-900 font-semibold'
+                : 'border-transparent text-stone-500 hover:text-stone-900 hover:border-stone-300'
+            }`}
+          >
+            All Products <span className="ml-1 text-xs text-stone-400 font-normal">({products.length})</span>
+          </button>
+          {categories.map((cat) => {
+            const catProducts = products.filter(p => p.categoryId === cat.id);
+            return (
+              <button
+                key={cat.id}
+                onClick={() => { setSelectedCategoryId(cat.id); setSearchQuery(''); }}
+                className={`pb-3 px-4 text-sm font-medium border-b-2 transition-all whitespace-nowrap ${
+                  selectedCategoryId === cat.id
+                    ? 'border-stone-900 text-stone-900 font-semibold'
+                    : 'border-transparent text-stone-500 hover:text-stone-900 hover:border-stone-300'
+                }`}
+              >
+                {cat.name} <span className="ml-1 text-xs text-stone-400 font-normal">({catProducts.length})</span>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Search */}
+        <div className="relative w-full md:max-w-xs mb-3 md:mb-0">
+          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+            <Search className="h-4 w-4 text-stone-400" />
+          </div>
+          <input
+            type="text"
+            placeholder="Search products..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="block w-full pl-9 pr-8 py-1.5 border border-stone-200 bg-white placeholder-stone-400 focus:outline-none focus:ring-1 focus:ring-stone-900 focus:border-stone-900 text-xs text-stone-900 transition-colors rounded-sm"
+          />
+          {searchQuery && (
+            <button 
+              onClick={() => setSearchQuery('')}
+              className="absolute inset-y-0 right-0 pr-2.5 flex items-center text-stone-400 hover:text-stone-600"
+            >
+              <X className="w-3.5 h-3.5" />
+            </button>
+          )}
+        </div>
+      </div>
+
       <div className="bg-white border border-stone-200 shadow-sm overflow-hidden text-left rounded-sm">
         <table className="w-full text-sm text-left text-stone-600">
           <thead className="text-xs text-stone-900 uppercase bg-stone-50 border-b border-stone-200">
@@ -223,14 +288,16 @@ export default function ProductsAdmin() {
             </tr>
           </thead>
           <tbody>
-            {products.length === 0 ? (
+            {filteredProducts.length === 0 ? (
               <tr>
                 <td colSpan="7" className="px-6 py-8 text-center text-stone-600">
-                  No products found. Add your first product to get started.
+                  {products.length === 0 
+                    ? "No products found. Add your first product to get started." 
+                    : "No products match this category or search filter."}
                 </td>
               </tr>
             ) : (
-              products.map((product) => {
+              filteredProducts.map((product) => {
                 const category = categories.find(c => c.id === product.categoryId);
                 return (
                   <tr key={product.id} className="border-b border-stone-100 hover:bg-stone-50 transition-colors">

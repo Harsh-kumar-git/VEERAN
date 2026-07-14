@@ -1,0 +1,442 @@
+[
+  {
+    "id": "bag_1000176910",
+    "name": "Luminous Cascade Sling",
+    "categoryId": "4",
+    "price": 850,
+    "description": "A beautifully crafted generic bag with an intricate design.",
+    "imageUrl": "/images/bags/1000176910.jpg",
+    "featured": true,
+    "in_stock": true
+  },
+  {
+    "id": "bag_1000176913",
+    "name": "Midnight Bloom Tote",
+    "categoryId": "4",
+    "price": 750,
+    "description": "A beautifully crafted generic bag with an intricate design.",
+    "imageUrl": "/images/bags/1000176913.jpg",
+    "featured": true,
+    "in_stock": true
+  },
+  {
+    "id": "bag_1000176916",
+    "name": "Crimson Tide Satchel",
+    "categoryId": "4",
+    "price": 1150,
+    "description": "A beautifully crafted generic bag with an intricate design.",
+    "imageUrl": "/images/bags/1000176916.jpg",
+    "featured": true,
+    "in_stock": true
+  },
+  {
+    "id": "bag_1000176919",
+    "name": "Obsidian Grace Clutch",
+    "categoryId": "4",
+    "price": 700,
+    "description": "A beautifully crafted generic bag with an intricate design.",
+    "imageUrl": "/images/bags/1000176919.jpg",
+    "featured": true,
+    "in_stock": true
+  },
+  {
+    "id": "bag_1000176931",
+    "name": "Ivory Serenade Crossbody",
+    "categoryId": "4",
+    "price": 900,
+    "description": "A beautifully crafted generic bag with an intricate design.",
+    "imageUrl": "/images/bags/1000176931.jpg",
+    "featured": false,
+    "in_stock": true
+  },
+  {
+    "id": "bag_1000176940",
+    "name": "Golden Zenith Handbag",
+    "categoryId": "4",
+    "price": 1650,
+    "description": "A beautifully crafted generic bag with an intricate design.",
+    "imageUrl": "/images/bags/1000176940.jpg",
+    "featured": false,
+    "in_stock": true
+  },
+  {
+    "id": "bag_1000176944",
+    "name": "Azure Whisper Hobo",
+    "categoryId": "4",
+    "price": 2000,
+    "description": "A beautifully crafted generic bag with an intricate design.",
+    "imageUrl": "/images/bags/1000176944.jpg",
+    "featured": false,
+    "in_stock": true
+  },
+  {
+    "id": "bag_1000176948",
+    "name": "Emerald Echo Backpack",
+    "categoryId": "4",
+    "price": 1700,
+    "description": "A beautifully crafted generic bag with an intricate design.",
+    "imageUrl": "/images/bags/1000176948.jpg",
+    "featured": false,
+    "in_stock": true
+  },
+  {
+    "id": "bag_1000176952",
+    "name": "Ruby Dawn Messenger",
+    "categoryId": "4",
+    "price": 2000,
+    "description": "A beautifully crafted generic bag with an intricate design.",
+    "imageUrl": "/images/bags/1000176952.jpg",
+    "featured": false,
+    "in_stock": true
+  },
+  {
+    "id": "bag_1000176956",
+    "name": "Sapphire Dusk Shopper",
+    "categoryId": "4",
+    "price": 1750,
+    "description": "A beautifully crafted generic bag with an intricate design.",
+    "imageUrl": "/images/bags/1000176956.jpg",
+    "featured": false,
+    "in_stock": true
+  },
+  {
+    "id": "bag_1000176960",
+    "name": "Amethyst Aura Pouch",
+    "categoryId": "4",
+    "price": 1850,
+    "description": "A beautifully crafted generic bag with an intricate design.",
+    "imageUrl": "/images/bags/1000176960.jpg",
+    "featured": false,
+    "in_stock": true
+  },
+  {
+    "id": "bag_1000176964",
+    "name": "Topaz Glimmer Duffel",
+    "categoryId": "4",
+    "price": 1600,
+    "description": "A beautifully crafted generic bag with an intricate design.",
+    "imageUrl": "/images/bags/1000176964.jpg",
+    "featured": false,
+    "in_stock": true
+  },
+  {
+    "id": "bag_1000176968",
+    "name": "Pearl Essence Barrel",
+    "categoryId": "4",
+    "price": 1550,
+    "description": "A beautifully crafted generic bag with an intricate design.",
+    "imageUrl": "/images/bags/1000176968.jpg",
+    "featured": false,
+    "in_stock": true
+  },
+  {
+    "id": "bag_1000176972",
+    "name": "Opal Mirage Bucket",
+    "categoryId": "4",
+    "price": 1450,
+    "description": "A beautifully crafted generic bag with an intricate design.",
+    "imageUrl": "/images/bags/1000176972.jpg",
+    "featured": false,
+    "in_stock": true
+  },
+  {
+    "id": "bag_1000176976",
+    "name": "Coral Symphony Wristlet",
+    "categoryId": "4",
+    "price": 1800,
+    "description": "A beautifully crafted generic bag with an intricate design.",
+    "imageUrl": "/images/bags/1000176976.jpg",
+    "featured": false,
+    "in_stock": true
+  },
+  {
+    "id": "bag_1000176980",
+    "name": "Jade Tranquility Briefcase",
+    "categoryId": "4",
+    "price": 1600,
+    "description": "A beautifully crafted generic bag with an intricate design.",
+    "imageUrl": "/images/bags/1000176980.jpg",
+    "featured": false,
+    "in_stock": true
+  },
+  {
+    "id": "bag_1000176984",
+    "name": "Amber Horizon Weekender",
+    "categoryId": "4",
+    "price": 1750,
+    "description": "A beautifully crafted generic bag with an intricate design.",
+    "imageUrl": "/images/bags/1000176984.jpg",
+    "featured": false,
+    "in_stock": true
+  },
+  {
+    "id": "bag_1000176988",
+    "name": "Onyx Silhouette Envelope",
+    "categoryId": "4",
+    "price": 1900,
+    "description": "A beautifully crafted generic bag with an intricate design.",
+    "imageUrl": "/images/bags/1000176988.jpg",
+    "featured": false,
+    "in_stock": true
+  },
+  {
+    "id": "bag_1000176992",
+    "name": "Quartz Reverie Minaudiere",
+    "categoryId": "4",
+    "price": 2000,
+    "description": "A beautifully crafted generic bag with an intricate design.",
+    "imageUrl": "/images/bags/1000176992.jpg",
+    "featured": false,
+    "in_stock": true
+  },
+  {
+    "id": "bag_1000176996",
+    "name": "Garnet Twilight Baguette",
+    "categoryId": "4",
+    "price": 1950,
+    "description": "A beautifully crafted generic bag with an intricate design.",
+    "imageUrl": "/images/bags/1000176996.jpg",
+    "featured": false,
+    "in_stock": true
+  },
+  {
+    "id": "bag_1000177000",
+    "name": "Beryl Solstice Satchel",
+    "categoryId": "4",
+    "price": 1950,
+    "description": "A beautifully crafted generic bag with an intricate design.",
+    "imageUrl": "/images/bags/1000177000.jpg",
+    "featured": false,
+    "in_stock": true
+  },
+  {
+    "id": "bag_1000177004",
+    "name": "Citrine Radiance Tote",
+    "categoryId": "4",
+    "price": 1850,
+    "description": "A beautifully crafted generic bag with an intricate design.",
+    "imageUrl": "/images/bags/1000177004.jpg",
+    "featured": false,
+    "in_stock": true
+  },
+  {
+    "id": "bag_1000177008",
+    "name": "Spinel Vortex Sling",
+    "categoryId": "4",
+    "price": 1000,
+    "description": "A beautifully crafted generic bag with an intricate design.",
+    "imageUrl": "/images/bags/1000177008.jpg",
+    "featured": false,
+    "in_stock": true
+  },
+  {
+    "id": "bag_1000177011",
+    "name": "Tourmaline Enigma Clutch",
+    "categoryId": "4",
+    "price": 900,
+    "description": "A beautifully crafted generic bag with an intricate design.",
+    "imageUrl": "/images/bags/1000177011.jpg",
+    "featured": false,
+    "in_stock": true
+  },
+  {
+    "id": "bag_1000177014",
+    "name": "Zircon Celestial Crossbody",
+    "categoryId": "4",
+    "price": 750,
+    "description": "A beautifully crafted generic bag with an intricate design.",
+    "imageUrl": "/images/bags/1000177014.jpg",
+    "featured": false,
+    "in_stock": true
+  },
+  {
+    "id": "bag_1000177017",
+    "name": "Agate Whisper Handbag",
+    "categoryId": "4",
+    "price": 850,
+    "description": "A beautifully crafted generic bag with an intricate design.",
+    "imageUrl": "/images/bags/1000177017.jpg",
+    "featured": false,
+    "in_stock": true
+  },
+  {
+    "id": "bag_1000177020",
+    "name": "Moonstone Cascade Hobo",
+    "categoryId": "4",
+    "price": 800,
+    "description": "A beautifully crafted generic bag with an intricate design.",
+    "imageUrl": "/images/bags/1000177020.jpg",
+    "featured": false,
+    "in_stock": true
+  },
+  {
+    "id": "bag_1000177023",
+    "name": "Sunstone Zenith Backpack",
+    "categoryId": "4",
+    "price": 750,
+    "description": "A beautifully crafted generic bag with an intricate design.",
+    "imageUrl": "/images/bags/1000177023.jpg",
+    "featured": false,
+    "in_stock": true
+  },
+  {
+    "id": "bag_1000177026",
+    "name": "Malachite Echo Messenger",
+    "categoryId": "4",
+    "price": 900,
+    "description": "A beautifully crafted generic bag with an intricate design.",
+    "imageUrl": "/images/bags/1000177026.jpg",
+    "featured": false,
+    "in_stock": true
+  },
+  {
+    "id": "bag_1000177029",
+    "name": "Lapis Dusk Shopper",
+    "categoryId": "4",
+    "price": 950,
+    "description": "A beautifully crafted generic bag with an intricate design.",
+    "imageUrl": "/images/bags/1000177029.jpg",
+    "featured": false,
+    "in_stock": true
+  },
+  {
+    "id": "bag_1000177032",
+    "name": "Turquoise Aura Pouch",
+    "categoryId": "4",
+    "price": 850,
+    "description": "A beautifully crafted generic bag with an intricate design.",
+    "imageUrl": "/images/bags/1000177032.jpg",
+    "featured": false,
+    "in_stock": true
+  },
+  {
+    "id": "bag_1000177035",
+    "name": "Aquamarine Glimmer Duffel",
+    "categoryId": "4",
+    "price": 950,
+    "description": "A beautifully crafted generic bag with an intricate design.",
+    "imageUrl": "/images/bags/1000177035.jpg",
+    "featured": false,
+    "in_stock": true
+  },
+  {
+    "id": "bag_1000177038",
+    "name": "Tanzanite Essence Barrel",
+    "categoryId": "4",
+    "price": 950,
+    "description": "A beautifully crafted generic bag with an intricate design.",
+    "imageUrl": "/images/bags/1000177038.jpg",
+    "featured": false,
+    "in_stock": true
+  },
+  {
+    "id": "bag_1000177041",
+    "name": "Peridot Mirage Bucket",
+    "categoryId": "4",
+    "price": 900,
+    "description": "A beautifully crafted generic bag with an intricate design.",
+    "imageUrl": "/images/bags/1000177041.jpg",
+    "featured": false,
+    "in_stock": true
+  },
+  {
+    "id": "bag_1000177044",
+    "name": "Morganite Symphony Wristlet",
+    "categoryId": "4",
+    "price": 800,
+    "description": "A beautifully crafted generic bag with an intricate design.",
+    "imageUrl": "/images/bags/1000177044.jpg",
+    "featured": false,
+    "in_stock": true
+  },
+  {
+    "id": "bag_1000177047",
+    "name": "Kunzite Tranquility Briefcase",
+    "categoryId": "4",
+    "price": 900,
+    "description": "A beautifully crafted generic bag with an intricate design.",
+    "imageUrl": "/images/bags/1000177047.jpg",
+    "featured": false,
+    "in_stock": true
+  },
+  {
+    "id": "bag_1000177050",
+    "name": "Sugilite Horizon Weekender",
+    "categoryId": "4",
+    "price": 1000,
+    "description": "A beautifully crafted generic bag with an intricate design.",
+    "imageUrl": "/images/bags/1000177050.jpg",
+    "featured": false,
+    "in_stock": true
+  },
+  {
+    "id": "bag_1000177053",
+    "name": "Rhodonite Silhouette Envelope",
+    "categoryId": "4",
+    "price": 1000,
+    "description": "A beautifully crafted generic bag with an intricate design.",
+    "imageUrl": "/images/bags/1000177053.jpg",
+    "featured": false,
+    "in_stock": true
+  },
+  {
+    "id": "bag_1000177056",
+    "name": "Jasper Reverie Minaudiere",
+    "categoryId": "4",
+    "price": 700,
+    "description": "A beautifully crafted generic bag with an intricate design.",
+    "imageUrl": "/images/bags/1000177056.jpg",
+    "featured": false,
+    "in_stock": true
+  },
+  {
+    "id": "bag_1000177059",
+    "name": "Carnelian Twilight Baguette",
+    "categoryId": "4",
+    "price": 700,
+    "description": "A beautifully crafted generic bag with an intricate design.",
+    "imageUrl": "/images/bags/1000177059.jpg",
+    "featured": false,
+    "in_stock": true
+  },
+  {
+    "id": "bag_1000177062",
+    "name": "Chrysoprase Solstice Satchel",
+    "categoryId": "4",
+    "price": 1150,
+    "description": "A beautifully crafted generic bag with an intricate design.",
+    "imageUrl": "/images/bags/1000177062.jpg",
+    "featured": false,
+    "in_stock": true
+  },
+  {
+    "id": "bag_1000177065",
+    "name": "Bloodstone Radiance Tote",
+    "categoryId": "4",
+    "price": 1250,
+    "description": "A beautifully crafted generic bag with an intricate design.",
+    "imageUrl": "/images/bags/1000177065.jpg",
+    "featured": false,
+    "in_stock": true
+  },
+  {
+    "id": "bag_1000177068",
+    "name": "Ametrine Vortex Sling",
+    "categoryId": "4",
+    "price": 1100,
+    "description": "A beautifully crafted generic bag with an intricate design.",
+    "imageUrl": "/images/bags/1000177068.jpg",
+    "featured": false,
+    "in_stock": true
+  },
+  {
+    "id": "bag_1000177071",
+    "name": "Iolite Enigma Clutch",
+    "categoryId": "4",
+    "price": 1150,
+    "description": "A beautifully crafted generic bag with an intricate design.",
+    "imageUrl": "/images/bags/1000177071.jpg",
+    "featured": false,
+    "in_stock": true
+  }
+]

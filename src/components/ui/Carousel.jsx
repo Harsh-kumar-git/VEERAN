@@ -6,30 +6,30 @@ import { ArrowRight } from 'lucide-react';
 const SLIDES = [
   {
     id: 1,
-    image: 'https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&q=80&w=2070',
-    title: 'VEERAN',
-    tagline: 'Crafted for everyday living',
+    image: '/images/bags/1000176910.jpg',
+    title: 'LUMINOUS CASCADE',
+    tagline: 'Premium designer sling bag, crafted for everyday grace.',
     cta: 'Explore Collection'
   },
   {
     id: 2,
-    image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80&w=2070',
-    title: 'NEW ARRIVALS',
-    tagline: 'Minimal. Functional. Timeless.',
+    image: '/images/bags/1000176913.jpg',
+    title: 'MIDNIGHT BLOOM',
+    tagline: 'Sophisticated tote silhouette and premium craftsmanship.',
     cta: 'Shop Now'
   },
   {
     id: 3,
-    image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=2070',
-    title: 'THE STUDIO',
-    tagline: 'Designed with simplicity and purpose.',
+    image: '/images/bags/1000176916.jpg',
+    title: 'CRIMSON TIDE',
+    tagline: 'Designed with meticulous precision and bold details.',
     cta: 'View Catalog'
   },
   {
     id: 4,
-    image: 'https://images.unsplash.com/photo-1505693314120-0d443867891c?auto=format&fit=crop&q=80&w=2070',
-    title: 'ESSENTIALS',
-    tagline: 'Transform your space.',
+    image: '/images/bags/1000176919.jpg',
+    title: 'OBSIDIAN GRACE',
+    tagline: 'An elegant clutch for the contemporary lifestyle.',
     cta: 'Discover More'
   }
 ];
