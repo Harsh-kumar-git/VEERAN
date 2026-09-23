@@ -1,20 +1,156 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", sans-serif;
-  --color-stone-50: #fafaf9;
+  /* ── Typography ── */
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+
+  /* ── Brand Palette ── */
+  --color-cream:        #F7F4EE;
+  --color-cream-dark:   #EDE9E1;
+  --color-charcoal:     #1A1A18;
+  --color-charcoal-mid: #2E2E2B;
+  --color-charcoal-soft:#6B6860;
+  --color-border:       #E2DDDA;
+  --color-surface:      #FFFFFF;
+
+  /* ── Brand Accent — Terracotta ── */
+  --color-brand:        #C8590A;
+  --color-brand-dark:   #A34507;
+  --color-brand-light:  #F0E0D4;
+
+  /* ── Stone palette (admin compatibility) ── */
+  --color-stone-50:  #fafaf9;
   --color-stone-100: #f5f5f4;
   --color-stone-200: #e7e5e4;
   --color-stone-400: #a8a29e;
   --color-stone-600: #57534e;
   --color-stone-800: #292524;
+  --color-stone-900: #1c1917;
 }
 
+/* ─────────────────────────────────────────── */
+/* BASE STYLES                                  */
+/* ─────────────────────────────────────────── */
 @layer base {
   html {
     scroll-behavior: smooth;
   }
+
   body {
-    @apply bg-white text-stone-800 antialiased selection:bg-stone-200;
+    background-color: var(--color-cream);
+    color: var(--color-charcoal);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Subtle grain texture overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.4;
+  }
+
+  /* Selection */
+  ::selection {
+    background-color: var(--color-brand-light);
+    color: var(--color-charcoal);
+  }
+
+  /* Focus visible */
+  :focus-visible {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 3px;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-cream);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-charcoal-soft);
+  }
+}
+
+/* ─────────────────────────────────────────── */
+/* TYPOGRAPHY UTILITIES                         */
+/* ─────────────────────────────────────────── */
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .text-brand {
+    color: var(--color-brand);
+  }
+
+  .bg-brand {
+    background-color: var(--color-brand);
+  }
+
+  .bg-cream {
+    background-color: var(--color-cream);
+  }
+
+  .bg-cream-dark {
+    background-color: var(--color-cream-dark);
+  }
+
+  .border-brand {
+    border-color: var(--color-brand);
+  }
+
+  .text-charcoal {
+    color: var(--color-charcoal);
+  }
+
+  .text-soft {
+    color: var(--color-charcoal-soft);
+  }
+
+  .border-veeran {
+    border-color: var(--color-border);
+  }
+
+  /* Stretched link helper */
+  .stretched-link::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+  }
+
+  /* Brand label caps */
+  .label-caps {
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  /* V divider element */
+  .v-divider::before {
+    content: '✓';
+    color: var(--color-brand);
+    margin-right: 0.5rem;
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }

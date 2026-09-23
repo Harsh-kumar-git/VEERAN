@@ -1,0 +1,42 @@
+[
+  {
+    "id": "j1",
+    "slug": "why-we-obsess-over-canvas",
+    "title": "Why We Obsess Over Canvas",
+    "excerpt": "Canvas is one of the oldest materials in everyday use. Here's why we chose it, how we source it, and what makes a good canvas different from an ordinary one.",
+    "category": "Material Stories",
+    "readTime": "4 min read",
+    "date": "2024-09-05",
+    "imageUrl": "https://images.unsplash.com/photo-1558171813-c56ddc8d3a55?auto=format&fit=crop&q=80&w=800"
+  },
+  {
+    "id": "j2",
+    "slug": "five-ways-to-use-your-tote",
+    "title": "Five Ways to Use Your VEERAN Tote",
+    "excerpt": "From the morning commute to the weekend farmers market — how one well-designed bag can replace three.",
+    "category": "Everyday Use",
+    "readTime": "3 min read",
+    "date": "2024-08-22",
+    "imageUrl": "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=800"
+  },
+  {
+    "id": "j3",
+    "slug": "behind-the-stitching",
+    "title": "Behind the Stitching",
+    "excerpt": "A look at the craft behind VEERAN bags — the people, the machines, and the details that most customers will never see but always feel.",
+    "category": "Behind the Scenes",
+    "readTime": "5 min read",
+    "date": "2024-07-30",
+    "imageUrl": "https://images.unsplash.com/photo-1615486511484-92e172cc4fe0?auto=format&fit=crop&q=80&w=800"
+  },
+  {
+    "id": "j4",
+    "slug": "organizing-your-everyday-carry",
+    "title": "Organizing Your Everyday Carry",
+    "excerpt": "A minimal approach to carrying what you actually need — and leaving behind what you don't.",
+    "category": "Organization Ideas",
+    "readTime": "3 min read",
+    "date": "2024-07-10",
+    "imageUrl": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&q=80&w=800"
+  }
+]

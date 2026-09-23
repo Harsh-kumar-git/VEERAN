@@ -1,0 +1,56 @@
+[
+  {
+    "id": "r1",
+    "productId": "bag_1000176910",
+    "author": "Priya Sharma",
+    "location": "Bengaluru",
+    "rating": 5,
+    "text": "Been using the Luminous Cascade Sling for 3 months now — office, weekend markets, quick errands. The canvas has held up perfectly and the stitching looks as tight as day one. Exactly what I needed.",
+    "date": "2024-08-12"
+  },
+  {
+    "id": "r2",
+    "productId": "bag_1000176913",
+    "author": "Arjun Mehta",
+    "location": "Mumbai",
+    "rating": 5,
+    "text": "Bought the Midnight Bloom Tote for my wife — she hasn't used any other bag since. The size is practical without being bulky. The quality is genuinely impressive for the price.",
+    "date": "2024-07-28"
+  },
+  {
+    "id": "r3",
+    "productId": "bag_1000176916",
+    "author": "Deepika Nair",
+    "location": "Chennai",
+    "rating": 4,
+    "text": "The Crimson Tide Satchel has great structure — it stands upright on its own, which I love. Fits my 13-inch laptop and daily essentials easily. Would've given 5 stars if the strap was slightly longer.",
+    "date": "2024-09-01"
+  },
+  {
+    "id": "r4",
+    "productId": "bag_1000176948",
+    "author": "Rohan Joshi",
+    "location": "Pune",
+    "rating": 5,
+    "text": "The Emerald Echo Backpack is the best bag I've owned. I cycle to work, use it on weekend hikes, and take it on flights. Truly built for everyday.",
+    "date": "2024-06-15"
+  },
+  {
+    "id": "r5",
+    "productId": "bag_1000176919",
+    "author": "Sneha Kapoor",
+    "location": "Delhi",
+    "rating": 5,
+    "text": "Simple, elegant, practical. The Obsidian Grace Clutch fits exactly what I need for an evening out. No flimsy zippers, no cheap lining. Just a well-made product.",
+    "date": "2024-08-30"
+  },
+  {
+    "id": "r6",
+    "productId": "bag_1000176931",
+    "author": "Kiran Reddy",
+    "location": "Hyderabad",
+    "rating": 4,
+    "text": "Really solid crossbody. I was skeptical ordering online but the material and finish exceeded my expectations. VEERAN clearly cares about the small details.",
+    "date": "2024-09-10"
+  }
+]

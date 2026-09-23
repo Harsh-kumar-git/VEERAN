@@ -1,134 +1,206 @@
 import { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
-import { getCategories, getSettings } from '../../services/dataService';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Search, ShoppingBag, Menu, X } from 'lucide-react';
+import { useCart } from '../../context/CartContext';
+import { getSettings } from '../../services/dataService';
 
 export default function Header() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [categories, setCategories] = useState([]);
-  const [siteConfig, setSiteConfig] = useState({ siteName: 'VEERAN' });
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [siteName, setSiteName] = useState('VEERAN');
+  const { count, setIsMiniCartOpen } = useCart();
   const location = useLocation();
 
   useEffect(() => {
-    setCategories(getCategories());
-    setSiteConfig(getSettings());
+    const settings = getSettings();
+    setSiteName(settings.siteName || 'VEERAN');
   }, []);
 
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
+  useEffect(() => {
+    const handle = () => setIsScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', handle, { passive: true });
+    return () => window.removeEventListener('scroll', handle);
+  }, []);
+
+  // Close mobile on route change
+  useEffect(() => {
+    setIsMobileOpen(false);
+    setIsSearchOpen(false);
+  }, [location]);
 
   const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'All Products', path: '/products' },
+    { label: 'Shop', to: '/shop' },
+    { label: 'Collections', to: '/collections' },
+    { label: 'Our Story', to: '/our-story' },
+    { label: 'Journal', to: '/journal' },
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-stone-100 transition-all">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="flex justify-between items-center h-16 lg:h-20">
-          
-          {/* Logo */}
-          <Link 
-            to="/" 
-            className="text-xl font-medium tracking-widest text-stone-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-900 focus-visible:ring-offset-2 rounded-sm"
-          >
-            {siteConfig.siteName}
-          </Link>
+    <>
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled
+            ? 'bg-[#F7F4EE]/95 backdrop-blur-md shadow-[0_1px_0_0_#E2DDDA]'
+            : 'bg-transparent'
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+          <div className="flex items-center justify-between h-16 lg:h-20">
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <NavLink
-                key={link.path}
-                to={link.path}
-                className={({ isActive }) =>
-                  `text-sm transition-all border-b-2 py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-900 focus-visible:ring-offset-2 rounded-sm ${
-                    isActive 
-                      ? 'border-stone-900 text-stone-900 font-medium' 
-                      : 'border-transparent text-stone-600 hover:text-stone-900 hover:border-stone-200'
-                  }`
-                }
-              >
-                {link.name}
-              </NavLink>
-            ))}
-            
-            {/* Categories Dropdown */}
-            <div className="relative group flex items-center h-full cursor-pointer text-sm text-stone-600 hover:text-stone-900 transition-colors">
-              <span className={`py-1 border-b-2 transition-all ${location.search.includes('category=') ? 'border-stone-900 text-stone-900 font-medium' : 'border-transparent group-hover:border-stone-200'}`}>
-                Categories
-              </span>
-              
-              <div className="absolute top-10 lg:top-12 left-1/2 -translate-x-1/2 w-48 bg-white border border-stone-100 shadow-sm opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all flex flex-col py-2 z-50">
-                {categories.map((category) => (
-                  <Link
-                    key={category.id}
-                    to={`/products?category=${category.slug}`}
-                    className="px-4 py-2 text-sm text-stone-600 hover:bg-stone-50 hover:text-stone-900 transition-colors focus-visible:outline-none focus-visible:bg-stone-50"
-                  >
-                    {category.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </nav>
+            {/* Logo */}
+            <Link
+              to="/"
+              className="text-xl font-medium tracking-[0.25em] text-[#1A1A18] hover:text-[#C8590A] transition-colors"
+              aria-label="VEERAN home"
+            >
+              {siteName}
+            </Link>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2 text-stone-600 hover:text-stone-900 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-900 rounded-sm"
-            onClick={toggleMobileMenu}
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-
-        </div>
-      </div>
-
-      {/* Mobile Navigation */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-b border-stone-100 overflow-hidden"
-          >
-            <div className="px-6 py-4 space-y-1">
-              {navLinks.map((link) => (
+            {/* Desktop nav */}
+            <nav className="hidden lg:flex items-center gap-10" aria-label="Main navigation">
+              {navLinks.map(link => (
                 <NavLink
-                  key={link.path}
-                  to={link.path}
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  key={link.to}
+                  to={link.to}
                   className={({ isActive }) =>
-                    `block px-3 py-2 text-base rounded-md tracking-wider transition-colors ${
-                      isActive 
-                        ? 'bg-stone-50 text-stone-900 font-medium' 
-                        : 'text-stone-600 hover:bg-stone-50 hover:text-stone-900'
+                    `text-sm transition-all duration-200 relative group ${
+                      isActive ? 'text-[#C8590A]' : 'text-[#1A1A18] hover:text-[#C8590A]'
                     }`
                   }
                 >
-                  {link.name}
+                  {({ isActive }) => (
+                    <>
+                      {link.label}
+                      <span className={`absolute -bottom-1 left-0 h-px bg-[#C8590A] transition-all duration-300 ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}`} />
+                    </>
+                  )}
                 </NavLink>
               ))}
-              
-              <div className="px-3 py-2 text-stone-400 font-medium mt-4 tracking-wider uppercase text-xs">Categories</div>
-              {categories.map((category) => (
-                <Link
-                  key={category.id}
-                  to={`/products?category=${category.slug}`}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="block px-3 py-2 text-sm text-stone-600 hover:bg-stone-50 hover:text-stone-900 rounded-md ml-4 transition-colors"
-                >
-                  {category.name}
-                </Link>
-              ))}
+            </nav>
+
+            {/* Actions */}
+            <div className="flex items-center gap-2">
+              {/* Search */}
+              <button
+                onClick={() => setIsSearchOpen(v => !v)}
+                className="p-2.5 text-[#1A1A18] hover:text-[#C8590A] transition-colors"
+                aria-label="Search"
+              >
+                <Search size={18} />
+              </button>
+
+              {/* Cart */}
+              <button
+                onClick={() => setIsMiniCartOpen(true)}
+                className="p-2.5 text-[#1A1A18] hover:text-[#C8590A] transition-colors relative"
+                aria-label={`Cart, ${count} items`}
+              >
+                <ShoppingBag size={18} />
+                {count > 0 && (
+                  <motion.span
+                    key={count}
+                    initial={{ scale: 0.6 }}
+                    animate={{ scale: 1 }}
+                    className="absolute -top-0.5 -right-0.5 w-4 h-4 bg-[#C8590A] text-white text-[9px] font-semibold flex items-center justify-center rounded-full"
+                  >
+                    {count > 9 ? '9+' : count}
+                  </motion.span>
+                )}
+              </button>
+
+              {/* Mobile menu toggle */}
+              <button
+                onClick={() => setIsMobileOpen(v => !v)}
+                className="lg:hidden p-2.5 text-[#1A1A18] hover:text-[#C8590A] transition-colors ml-1"
+                aria-label={isMobileOpen ? 'Close menu' : 'Open menu'}
+                aria-expanded={isMobileOpen}
+              >
+                {isMobileOpen ? <X size={20} /> : <Menu size={20} />}
+              </button>
             </div>
-          </motion.div>
+          </div>
+
+          {/* Search bar */}
+          <AnimatePresence>
+            {isSearchOpen && (
+              <motion.div
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: 'auto', opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                className="overflow-hidden border-t border-[#E2DDDA]"
+              >
+                <div className="py-4 flex items-center gap-3">
+                  <Search size={16} className="text-[#6B6860] flex-shrink-0" />
+                  <input
+                    type="search"
+                    value={searchQuery}
+                    onChange={e => setSearchQuery(e.target.value)}
+                    placeholder="Search products..."
+                    autoFocus
+                    className="flex-1 bg-transparent text-sm text-[#1A1A18] placeholder:text-[#6B6860] outline-none"
+                    onKeyDown={e => {
+                      if (e.key === 'Enter' && searchQuery.trim()) {
+                        window.location.href = `/shop?search=${encodeURIComponent(searchQuery.trim())}`;
+                      }
+                    }}
+                  />
+                  <Link
+                    to={`/shop${searchQuery.trim() ? `?search=${encodeURIComponent(searchQuery.trim())}` : ''}`}
+                    className="label-caps text-[#C8590A] text-xs hover:underline"
+                  >
+                    Go
+                  </Link>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      </header>
+
+      {/* Mobile nav drawer */}
+      <AnimatePresence>
+        {isMobileOpen && (
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-[#1A1A18]/30 backdrop-blur-sm z-40 lg:hidden"
+              onClick={() => setIsMobileOpen(false)}
+            />
+            <motion.nav
+              initial={{ x: '-100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '-100%' }}
+              transition={{ type: 'tween', duration: 0.28 }}
+              className="fixed top-0 left-0 h-full w-4/5 max-w-xs bg-[#F7F4EE] z-50 lg:hidden flex flex-col pt-20 px-8 pb-10"
+              aria-label="Mobile navigation"
+            >
+              <div className="space-y-1">
+                {navLinks.map(link => (
+                  <NavLink
+                    key={link.to}
+                    to={link.to}
+                    className={({ isActive }) =>
+                      `block py-3.5 text-2xl font-display font-medium border-b border-[#E2DDDA] transition-colors ${
+                        isActive ? 'text-[#C8590A]' : 'text-[#1A1A18]'
+                      }`
+                    }
+                  >
+                    {link.label}
+                  </NavLink>
+                ))}
+              </div>
+              <div className="mt-auto">
+                <p className="label-caps text-[#6B6860] text-xs">VEERAN — Built for everyday.</p>
+              </div>
+            </motion.nav>
+          </>
         )}
       </AnimatePresence>
-    </header>
+    </>
   );
 }

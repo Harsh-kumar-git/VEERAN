@@ -1,64 +1,108 @@
-import { getWhatsAppLink } from '../../utils/whatsapp';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { ShoppingBag, Eye } from 'lucide-react';
+import { useCart } from '../../context/CartContext';
+import VCheckmark from '../ui/VCheckmark';
 
-export default function ProductCard({ product, category }) {
-  const whatsappUrl = getWhatsAppLink(product.name);
-  
+export default function ProductCard({ product, category, showAddToCart = true }) {
+  const { addToCart } = useCart();
+  const [isAdded, setIsAdded] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleAddToCart = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (!product.in_stock) return;
+    addToCart(product);
+    setIsAdded(true);
+    setTimeout(() => setIsAdded(false), 1800);
+  };
+
   return (
-    <div className="group flex flex-col h-full bg-white border border-stone-100 hover:border-stone-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-stone-200/50">
-      <div className="relative aspect-[4/5] bg-stone-50 overflow-hidden">
-        {/* Badges container */}
-        <div className="absolute top-4 left-4 z-10 flex flex-col gap-2 pointer-events-none">
+    <div
+      className="group relative flex flex-col"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      {/* Image container */}
+      <Link to={`/products/${product.id}`} className="block relative overflow-hidden bg-[#EDE9E1] aspect-[3/4]">
+
+        {/* Main image */}
+        <motion.img
+          src={product.imageUrl}
+          alt={product.name}
+          className="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
+          animate={{ scale: isHovered ? 1.05 : 1 }}
+          transition={{ duration: 0.6, ease: [0.32, 0, 0.67, 0] }}
+        />
+
+        {/* Badges */}
+        <div className="absolute top-3 left-3 flex flex-col gap-1.5 z-10">
           {product.featured && (
-            <span className="inline-flex items-center px-2 py-1 bg-amber-700 shadow-sm text-[10px] font-medium tracking-widest text-white uppercase">
+            <span className="label-caps text-[9px] bg-[#C8590A] text-white px-2 py-1">
               Featured
             </span>
           )}
-          {product.in_stock === false && (
-            <span className="inline-flex items-center px-2 py-1 bg-stone-900 text-[10px] font-medium tracking-widest text-white uppercase shadow-sm">
-              Out of Stock
+          {!product.in_stock && (
+            <span className="label-caps text-[9px] bg-[#1A1A18] text-white px-2 py-1">
+              Sold Out
             </span>
           )}
         </div>
 
-        <img 
-          src={product.imageUrl} 
-          alt={product.name}
-          className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
-          loading="lazy"
-        />
-      </div>
+        {/* Quick view on hover */}
+        <motion.div
+          className="absolute bottom-3 left-3 right-3 z-10"
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : 8 }}
+          transition={{ duration: 0.2 }}
+        >
+          <Link
+            to={`/products/${product.id}`}
+            className="flex items-center justify-center gap-2 bg-[#F7F4EE]/95 backdrop-blur-sm py-2.5 text-xs font-medium text-[#1A1A18] hover:bg-white transition-colors"
+          >
+            <Eye size={13} />
+            Quick View
+          </Link>
+        </motion.div>
+      </Link>
 
-      <div className="p-6 flex flex-col flex-1">
-        <div className="mb-4">
-          <p className="text-xs font-medium text-stone-400 mb-1 uppercase tracking-wider">
-            {category ? category.name : 'Category'}
+      {/* Product info */}
+      <div className="pt-4 flex flex-col gap-1.5">
+        {category && (
+          <p className="label-caps text-[#6B6860] text-[10px]">{category.name}</p>
+        )}
+        <Link to={`/products/${product.id}`} className="block">
+          <h3 className="text-sm font-medium text-[#1A1A18] leading-snug hover:text-[#C8590A] transition-colors line-clamp-2">
+            {product.name}
+          </h3>
+        </Link>
+
+        <div className="flex items-center justify-between mt-1">
+          <p className="text-base font-medium text-[#1A1A18]">
+            ₹{product.price.toLocaleString('en-IN')}
           </p>
-          <div className="flex justify-between items-start gap-4">
-            <h3 className="text-lg font-medium text-stone-900 leading-tight group-hover:text-stone-700 transition-colors">{product.name}</h3>
-            <p className="text-lg font-medium text-stone-900 whitespace-nowrap">₹{product.price}</p>
-          </div>
-        </div>
-        
-        <p className="text-sm text-stone-600 mb-6 flex-1 line-clamp-3">
-          {product.description}
-        </p>
 
-        <div className="mt-auto">
-          {product.in_stock ? (
-            <a 
-              href={whatsappUrl} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="w-full inline-flex justify-center items-center px-4 py-3 text-sm font-medium text-stone-900 bg-white hover:bg-stone-50 border border-stone-300 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-900 rounded-sm"
+          {showAddToCart && (
+            <button
+              onClick={handleAddToCart}
+              disabled={!product.in_stock}
+              aria-label={isAdded ? 'Added to bag' : `Add ${product.name} to bag`}
+              className={`w-8 h-8 flex items-center justify-center border transition-all duration-300 ${
+                !product.in_stock
+                  ? 'border-[#E2DDDA] text-[#E2DDDA] cursor-not-allowed'
+                  : isAdded
+                  ? 'border-[#C8590A] bg-[#C8590A] text-white'
+                  : 'border-[#E2DDDA] text-[#6B6860] hover:border-[#1A1A18] hover:text-[#1A1A18]'
+              }`}
             >
-              Enquire on WhatsApp
-            </a>
-          ) : (
-            <button 
-              disabled
-              className="w-full inline-flex justify-center items-center px-4 py-3 text-sm font-medium text-stone-400 bg-stone-50 border border-stone-200 cursor-not-allowed transition-colors rounded-sm"
-            >
-              Out of Stock
+              {isAdded ? (
+                <VCheckmark size={14} color="white" animated />
+              ) : (
+                <ShoppingBag size={14} />
+              )}
             </button>
           )}
         </div>
