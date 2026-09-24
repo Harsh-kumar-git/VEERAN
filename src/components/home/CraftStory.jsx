@@ -13,7 +13,7 @@ const STAGES = [
     number: '02',
     label: 'CRAFT',
     headline: 'Stitched for strength.',
-    body: 'Every seam is reinforced. Every buckle tested. The construction is designed to outlast the product's first year, and then some.',
+    body: "Every seam is reinforced. Every buckle tested. The construction is designed to outlast the product's first year, and then some.",
     image: 'https://images.unsplash.com/photo-1615486511484-92e172cc4fe0?auto=format&fit=crop&q=80&w=1200',
   },
   {

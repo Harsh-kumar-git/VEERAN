@@ -65,7 +65,7 @@ export const buildCartWhatsAppLink = (cart, whatsappNumber) => {
 
   const total = getCartTotal();
   const message = [
-    'Hi, I'd like to order from VEERAN:',
+    "Hi, I'd like to order from VEERAN:",
     '',
     ...lines,
     '',
