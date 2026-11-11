@@ -21,14 +21,14 @@ export default function CategoriesAdmin() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  useEffect(() => {
-    loadData();
-  }, []);
-
   const loadData = () => {
     setCategories(getCategories());
     setProducts(getProducts());
   };
+
+  useEffect(() => {
+    loadData();
+  }, []);
 
   const handleOpenModal = (category = null) => {
     if (category) {

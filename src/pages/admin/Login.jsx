@@ -12,10 +12,14 @@ export default function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (login(password)) {
-      navigate(from, { replace: true });
-    } else {
-      setError('Invalid password');
+    try {
+      if (login(password)) {
+        navigate(from, { replace: true });
+      } else {
+        setError('Invalid password. Please try again.');
+      }
+    } catch (err) {
+      setError(err.message || 'Login error occurred');
     }
   };
 

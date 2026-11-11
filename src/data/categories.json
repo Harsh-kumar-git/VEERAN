@@ -3,6 +3,12 @@
     "id": "4",
     "name": "Bags",
     "slug": "bags",
-    "description": "Premium designer bags"
+    "description": "Premium handcrafted designer bags & luggage"
+  },
+  {
+    "id": "5",
+    "name": "Bottles & Hydration",
+    "slug": "bottles",
+    "description": "Premium insulated bottles, animal character sips & kids stainless steel hydration"
   }
 ]

@@ -3,6 +3,7 @@ import BrandIntro from '../components/home/BrandIntro';
 import UseCaseGrid from '../components/home/UseCaseGrid';
 import CraftStory from '../components/home/CraftStory';
 import FeaturedProducts from '../components/home/FeaturedProducts';
+import BottlePosterShowcase from '../components/home/BottlePosterShowcase';
 import FindYourVeeran from '../components/home/FindYourVeeran';
 import WhyVeeran from '../components/home/WhyVeeran';
 import CustomerStories from '../components/home/CustomerStories';
@@ -16,6 +17,7 @@ export default function Home() {
       <BrandIntro />
       <UseCaseGrid />
       <FeaturedProducts />
+      <BottlePosterShowcase />
       <CraftStory />
       <FindYourVeeran />
       <WhyVeeran />

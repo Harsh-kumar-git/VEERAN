@@ -32,14 +32,14 @@ export default function ProductsAdmin() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  useEffect(() => {
-    loadData();
-  }, []);
-
   const loadData = () => {
     setProducts(getProducts());
     setCategories(getCategories());
   };
+
+  useEffect(() => {
+    loadData();
+  }, []);
 
   const handleOpenModal = (product = null) => {
     let payload;
@@ -127,7 +127,7 @@ export default function ProductsAdmin() {
       updateProduct(productId, { [field]: !currentValue });
       loadData();
       showToast('Product updated successfully');
-    } catch (err) {
+    } catch {
       showToast('Failed to update product', 'error');
     }
   };
@@ -138,7 +138,7 @@ export default function ProductsAdmin() {
         deleteProduct(id);
         loadData();
         showToast('Product deleted successfully');
-      } catch (err) {
+      } catch {
         showToast('Failed to delete product', 'error');
       }
     }

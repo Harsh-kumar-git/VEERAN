@@ -2,12 +2,12 @@ import { getSettings } from '../services/dataService';
 
 export const getWhatsAppLink = (productName) => {
   const settings = getSettings();
-  const whatsappNumber = settings.whatsappNumber;
+  const whatsappNumber = settings?.whatsappNumber || '919876543210';
   
-  // Format the number to remove any non-numeric characters just in case
-  const cleanNumber = whatsappNumber.replace(/\D/g, '');
+  // Format the number to remove any non-numeric characters
+  const cleanNumber = String(whatsappNumber).replace(/\D/g, '');
   
-  const message = `Hi, I'm interested in ${productName}`;
+  const message = `Hi, I'm interested in ${productName || 'products from Veeran'}`;
   const encodedMessage = encodeURIComponent(message);
   
   return `https://wa.me/${cleanNumber}?text=${encodedMessage}`;

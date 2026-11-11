@@ -1,5 +1,55 @@
 [
   {
+    "id": "bottle_snowy_penguin",
+    "name": "Snowy Penguin Insulated Bottle",
+    "categoryId": "5",
+    "price": 699,
+    "description": "Cool Sips All Day! Your chilly buddy featuring premium food-grade stainless steel, double-wall insulation to keep drinks hot & cold for hours, BPA-free safety, and a leak-proof character lid.",
+    "imageUrl": "/images/bottles/snowy-penguin-poster.jpg",
+    "featured": true,
+    "in_stock": true
+  },
+  {
+    "id": "bottle_ella_elephant",
+    "name": "Ella The Elephant Insulated Bottle",
+    "categoryId": "5",
+    "price": 699,
+    "description": "Big on Style, Bigger on Hydration! Sip happier everyday with adorable elephant character cap, food-grade stainless steel construction, long-lasting hot & cold thermal retention, and BPA-free design.",
+    "imageUrl": "/images/bottles/ella-elephant-poster.jpg",
+    "featured": true,
+    "in_stock": true
+  },
+  {
+    "id": "bottle_shiba_pup",
+    "name": "Shiba Pup Insulated Bottle",
+    "categoryId": "5",
+    "price": 699,
+    "description": "Playful Sips For Brighter Days! Stay pawsitive and hydrated with cute Shiba Inu 3D cap, bone pattern artwork, vacuum-insulated stainless steel, leak-proof seal, and 100% BPA-free materials.",
+    "imageUrl": "/images/bottles/shiba-pup-poster.jpg",
+    "featured": true,
+    "in_stock": true
+  },
+  {
+    "id": "bottle_moo_moo",
+    "name": "Moo Moo Cow Insulated Bottle",
+    "categoryId": "5",
+    "price": 699,
+    "description": "Fresh Sips Every Day! Mooo Hydration, Mooore Happiness! Classic spotted cow design with charming 3D cow head lid, food-grade stainless steel, hot & cold temperature preservation, and leak-proof seal.",
+    "imageUrl": "/images/bottles/moo-moo-bottle-poster.jpg",
+    "featured": true,
+    "in_stock": true
+  },
+  {
+    "id": "bottle_kitty_delight",
+    "name": "Kitty Delight Insulated Bottle",
+    "categoryId": "5",
+    "price": 699,
+    "description": "Cute Sips for a Happier You! Stay cute and stay hydrated with feline charm. Double-walled stainless steel keeps drinks at ideal temperature for hours, completely BPA free, safe and 100% leak-proof.",
+    "imageUrl": "/images/bottles/kitty-delight-poster.jpg",
+    "featured": true,
+    "in_stock": true
+  },
+  {
     "id": "bag_1000176910",
     "name": "Luminous Cascade Sling",
     "categoryId": "4",

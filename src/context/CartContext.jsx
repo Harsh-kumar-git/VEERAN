@@ -5,8 +5,6 @@ import {
   removeFromCart as removeFromCartService,
   updateQuantity as updateQuantityService,
   clearCart as clearCartService,
-  getCartCount,
-  getCartTotal,
   buildCartWhatsAppLink
 } from '../services/cartService';
 import { getSettings } from '../services/dataService';
@@ -72,6 +70,7 @@ export function CartProvider({ children }) {
   );
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useCart = () => {
   const ctx = useContext(CartContext);
   if (!ctx) throw new Error('useCart must be used within CartProvider');

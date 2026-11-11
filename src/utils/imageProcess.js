@@ -1,7 +1,14 @@
+const MAX_INPUT_FILE_SIZE = 10 * 1024 * 1024; // 10MB limit
+
 export const processImageFile = (file) => {
   return new Promise((resolve, reject) => {
-    if (!file || !file.type.startsWith('image/')) {
-      reject(new Error('Invalid file type. Please upload an image.'));
+    if (!file || !file.type || !file.type.startsWith('image/')) {
+      reject(new Error('Invalid file type. Please upload a valid image file.'));
+      return;
+    }
+
+    if (file.size > MAX_INPUT_FILE_SIZE) {
+      reject(new Error('File size exceeds the 10MB limit. Please upload a smaller image.'));
       return;
     }
 
@@ -30,6 +37,11 @@ export const processImageFile = (file) => {
         canvas.height = height;
 
         const ctx = canvas.getContext('2d');
+        if (!ctx) {
+          reject(new Error('Canvas context could not be acquired.'));
+          return;
+        }
+
         // Fill white background in case of transparent pngs converted to jpeg
         ctx.fillStyle = '#FFFFFF';
         ctx.fillRect(0, 0, width, height);
@@ -38,7 +50,7 @@ export const processImageFile = (file) => {
         // Convert to WebP if supported, otherwise JPEG. Compression ~0.7 targets ~150kb
         let dataUrl = canvas.toDataURL('image/webp', 0.7);
         
-        // If webp isn't supported resulting in larger ping or fallbacks, try jpeg
+        // If webp isn't supported resulting in larger fallback, use jpeg
         if (!dataUrl.startsWith('data:image/webp')) {
           dataUrl = canvas.toDataURL('image/jpeg', 0.7);
         }
@@ -47,14 +59,14 @@ export const processImageFile = (file) => {
       };
       
       img.onerror = () => {
-        reject(new Error('Failed to load image.'));
+        reject(new Error('Failed to load image. File may be corrupted.'));
       };
 
       img.src = event.target.result;
     };
 
     reader.onerror = () => {
-      reject(new Error('Failed to read file.'));
+      reject(new Error('Failed to read file from disk.'));
     };
 
     reader.readAsDataURL(file);
