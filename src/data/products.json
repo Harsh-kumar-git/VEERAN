@@ -50,6 +50,116 @@
     "in_stock": true
   },
   {
+    "id": "bottle_fluted_classic_ivory",
+    "name": "Classic Ivory Ribbed Bottle 350ml",
+    "categoryId": "5",
+    "price": 549,
+    "description": "Compact everyday size with an elegant ribbed tactile finish, beaded easy-carry silicone strap, and leak-proof seal. Perfect for daily hydration with timeless minimalism.",
+    "imageUrl": "/images/bottles/fluted-classic-ivory-bottle.jpg",
+    "featured": true,
+    "in_stock": true
+  },
+  {
+    "id": "bottle_fluted_soft_pink",
+    "name": "Soft Pink Ribbed Bottle 350ml",
+    "categoryId": "5",
+    "price": 549,
+    "description": "Delicate pastel pink fluted exterior paired with an easy-carry beaded lanyard. Compact 350ml capacity designed for purse, backpack, or desk hydration in style.",
+    "imageUrl": "/images/bottles/fluted-soft-pink-bottle.jpg",
+    "featured": true,
+    "in_stock": true
+  },
+  {
+    "id": "bottle_fluted_cherry_red",
+    "name": "Cherry Red Ribbed Bottle 350ml",
+    "categoryId": "5",
+    "price": 549,
+    "description": "Vibrant cherry red finish with ergonomic vertical fluting, reinforced loop handle, and leak-proof twist cap. Bold aesthetics meets practical portability.",
+    "imageUrl": "/images/bottles/fluted-cherry-red-bottle.jpg",
+    "featured": true,
+    "in_stock": true
+  },
+  {
+    "id": "bottle_fluted_lavender_dream",
+    "name": "Lavender Dream Ribbed Bottle 350ml",
+    "categoryId": "5",
+    "price": 549,
+    "description": "Soothing lavender matte finish with stylish easy-carry loop and textured grip. Lightweight, durable, and crafted for pure sips wherever your day takes you.",
+    "imageUrl": "/images/bottles/fluted-lavender-dream-bottle.jpg",
+    "featured": true,
+    "in_stock": true
+  },
+  {
+    "id": "bottle_bunny_buddy_mint",
+    "name": "Bunny Buddy Mint Glass Bottle 330ml",
+    "categoryId": "5",
+    "price": 499,
+    "description": "Little Moments, Big Stories! I'm reading! mint green compact glass bottle with protective silicone jacket, carry loop, and leak-proof cap. Perfect for school, desk & travel.",
+    "imageUrl": "/images/bottles/bunny-buddy-mint-bottle.jpg",
+    "featured": true,
+    "in_stock": true
+  },
+  {
+    "id": "bottle_cute_rabbit_pink",
+    "name": "Cute Rabbit Blush Pink Glass Bottle 330ml",
+    "categoryId": "5",
+    "price": 499,
+    "description": "It's a Cute Rabbit! Adorable pink glass bottle with charming bunny ear graphics, soft pastel finish, carry loop, and 100% BPA-free hygienic glass construction.",
+    "imageUrl": "/images/bottles/cute-rabbit-pink-bottle.jpg",
+    "featured": true,
+    "in_stock": true
+  },
+  {
+    "id": "bottle_hulu_hulu_peach",
+    "name": "Hulu Hulu Peach Glass Bottle 330ml",
+    "categoryId": "5",
+    "price": 499,
+    "description": "Little Sips, Brighter Days! Warm peach silicone-coated glass bottle featuring whimsical bunny doodles, comfortable carry strap, lightweight compact body, and leak-proof seal.",
+    "imageUrl": "/images/bottles/hulu-hulu-peach-bottle.jpg",
+    "featured": true,
+    "in_stock": true
+  },
+  {
+    "id": "bottle_nice_classic_white",
+    "name": "NICE Classic White Glass Bottle",
+    "categoryId": "5",
+    "price": 599,
+    "description": "Pure Sips, Everyday! Timeless style with brushed stainless steel accent lid, silicone carry strap, temperature retention for hot & cold sips, and BPA-free food-safe glass body.",
+    "imageUrl": "/images/bottles/nice-classic-white-bottle.jpg",
+    "featured": true,
+    "in_stock": true
+  },
+  {
+    "id": "bottle_nice_fresh_mint",
+    "name": "NICE Fresh Mint Glass Bottle",
+    "categoryId": "5",
+    "price": 599,
+    "description": "Stay Refreshed Naturally! A fresh soothing shade with metallic twist cap, leak-proof silicone gasket, infused water filter compatibility, and versatile gym/office utility.",
+    "imageUrl": "/images/bottles/nice-fresh-mint-bottle.jpg",
+    "featured": true,
+    "in_stock": true
+  },
+  {
+    "id": "bottle_nice_cool_blue",
+    "name": "NICE Cool Blue Glass Bottle",
+    "categoryId": "5",
+    "price": 599,
+    "description": "Chill Sips Anytime, Anywhere! Cool outside, calm inside. Premium borosilicate glass with polished metallic cap, leak-proof design, and dual hot/cold drink compatibility.",
+    "imageUrl": "/images/bottles/nice-cool-blue-bottle.jpg",
+    "featured": true,
+    "in_stock": true
+  },
+  {
+    "id": "bottle_nice_blush_pink",
+    "name": "NICE Blush Pink Glass Bottle",
+    "categoryId": "5",
+    "price": 599,
+    "description": "Sips of Happiness Everyday! Pretty sips for brighter days with reflective metallic cap, easy-carry silicone strap, BPA-free leak-proof lid, and sleek purse-friendly profile.",
+    "imageUrl": "/images/bottles/nice-blush-pink-bottle.jpg",
+    "featured": true,
+    "in_stock": true
+  },
+  {
     "id": "bag_1000176910",
     "name": "Luminous Cascade Sling",
     "categoryId": "4",

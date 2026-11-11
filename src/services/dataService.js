@@ -7,8 +7,8 @@ const CATEGORIES_KEY = 'veeran_categories';
 const PRODUCTS_KEY = 'veeran_products';
 const SETTINGS_KEY = 'veeran_settings';
 
-// Force catalog refresh to seed bottles and latest categories
-const CATALOG_RESET_KEY = 'veeran_catalog_reset_v3';
+// Force catalog refresh to seed all 16 bottles across 4 series
+const CATALOG_RESET_KEY = 'veeran_catalog_reset_v4';
 try {
   if (!localStorage.getItem(CATALOG_RESET_KEY)) {
     localStorage.removeItem(CATEGORIES_KEY);
