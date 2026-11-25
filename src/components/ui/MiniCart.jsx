@@ -91,7 +91,7 @@ export default function MiniCart() {
                           <img
                             src={item.imageUrl}
                             alt={item.name}
-                            className="w-full h-full object-cover"
+                            className={`w-full h-full ${item.categoryId === '5' ? 'object-contain p-1' : 'object-cover'}`}
                             loading="lazy"
                           />
                         </div>

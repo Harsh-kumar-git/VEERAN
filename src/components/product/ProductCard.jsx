@@ -32,7 +32,7 @@ export default function ProductCard({ product, category, showAddToCart = true })
         <motion.img
           src={product.imageUrl}
           alt={product.name}
-          className="absolute inset-0 w-full h-full object-cover"
+          className={`absolute inset-0 w-full h-full ${product.categoryId === '5' ? 'object-contain p-2' : 'object-cover'}`}
           loading="lazy"
           animate={{ scale: isHovered ? 1.05 : 1 }}
           transition={{ duration: 0.6, ease: [0.32, 0, 0.67, 0] }}

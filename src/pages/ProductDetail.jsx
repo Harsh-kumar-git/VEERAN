@@ -123,7 +123,7 @@ export default function ProductDetail() {
               <img
                 src={product.imageUrl}
                 alt={product.name}
-                className="w-full h-full object-cover"
+                className={`w-full h-full ${product.categoryId === '5' ? 'object-contain p-4' : 'object-cover'}`}
                 loading="eager"
               />
               {product.featured && (

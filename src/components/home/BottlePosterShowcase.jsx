@@ -303,11 +303,11 @@ export default function BottlePosterShowcase() {
               className="group flex flex-col bg-stone-800/60 border border-stone-700/50 hover:border-amber-500/60 rounded-sm overflow-hidden transition-all duration-300 hover:-translate-y-1.5 shadow-sm hover:shadow-xl"
             >
               {/* Poster image container */}
-              <div className="relative aspect-[1/2.3] w-full overflow-hidden bg-stone-950">
+              <div className="relative aspect-[3/4] w-full overflow-hidden bg-stone-950">
                 <img
                   src={bottle.image}
                   alt={`${bottle.name} Poster`}
-                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
                 <span className="absolute top-3 left-3 bg-stone-900/85 backdrop-blur-sm text-stone-200 text-[10px] tracking-wider uppercase px-2.5 py-1 rounded-sm border border-stone-700 font-medium">

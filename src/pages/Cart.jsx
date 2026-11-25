@@ -57,7 +57,7 @@ export default function Cart() {
               >
                 {/* Image */}
                 <Link to={`/products/${item.id}`} className="flex-shrink-0 w-24 sm:w-28 aspect-[3/4] bg-[#EDE9E1] overflow-hidden">
-                  <img src={item.imageUrl} alt={item.name} className="w-full h-full object-cover" loading="lazy" />
+                  <img src={item.imageUrl} alt={item.name} className={`w-full h-full ${item.categoryId === '5' ? 'object-contain p-1' : 'object-cover'}`} loading="lazy" />
                 </Link>
 
                 {/* Details */}
