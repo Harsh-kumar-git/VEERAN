@@ -133,25 +133,21 @@ export default function ProductDetail() {
               )}
             </motion.div>
 
-            {/* Real-world context image placeholder */}
-            <div className="grid grid-cols-2 gap-3">
-              <div className="aspect-square bg-[#EDE9E1] overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&q=80&w=600"
-                  alt="In-use view"
-                  className="w-full h-full object-cover opacity-80"
-                  loading="lazy"
-                />
+            {/* Additional gallery view if product has additional images */}
+            {product.images && product.images.length > 0 && (
+              <div className="grid grid-cols-2 gap-3">
+                {product.images.map((imgUrl, idx) => (
+                  <div key={idx} className="aspect-square bg-[#EDE9E1] overflow-hidden">
+                    <img
+                      src={imgUrl}
+                      alt={`${product.name} view ${idx + 1}`}
+                      className="w-full h-full object-contain p-2"
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
               </div>
-              <div className="aspect-square bg-[#EDE9E1] overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1558171813-c56ddc8d3a55?auto=format&fit=crop&q=80&w=600"
-                  alt="Material detail"
-                  className="w-full h-full object-cover opacity-80"
-                  loading="lazy"
-                />
-              </div>
-            </div>
+            )}
           </div>
 
           {/* Right: Product info */}
@@ -194,11 +190,18 @@ export default function ProductDetail() {
 
             {/* Key characteristics */}
             <div className="mt-6 space-y-2.5">
-              {[
-                'Reinforced seams and stress points',
-                'Wipe-clean exterior',
-                'Designed for daily use',
-              ].map(trait => (
+              {(product.categoryId === '5'
+                ? [
+                    'Food-grade stainless steel & BPA-free',
+                    'Double-wall thermal insulation',
+                    '100% leak-proof precision seal',
+                  ]
+                : [
+                    'Reinforced seams and stress points',
+                    'Wipe-clean exterior',
+                    'Designed for daily use',
+                  ]
+              ).map(trait => (
                 <div key={trait} className="flex items-start gap-2.5 text-sm text-[#6B6860]">
                   <svg className="mt-0.5 flex-shrink-0" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C8590A" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M4 13L9 18L20 6" />
@@ -297,12 +300,20 @@ export default function ProductDetail() {
                 >
                   {activeTab === 'details' && (
                     <dl className="space-y-3">
-                      {[
-                        { label: 'Material', value: 'Canvas / Woven fabric' },
-                        { label: 'Dimensions', value: 'Approx. 38 × 28 × 12 cm' },
-                        { label: 'Weight', value: '~350g (empty)' },
-                        { label: 'Closure', value: 'Zipper / Magnetic snap' },
-                      ].map(item => (
+                      {(product.categoryId === '5'
+                        ? [
+                            { label: 'Material', value: 'Food-grade Stainless Steel / Borosilicate Glass' },
+                            { label: 'Capacity', value: product.name.includes('330') ? '330 ml' : product.name.includes('350') ? '350 ml' : '500 ml' },
+                            { label: 'Insulation', value: 'Double-wall Vacuum Hot & Cold Retention' },
+                            { label: 'Lid Type', value: 'Leak-proof Silicone Seal Cap' },
+                          ]
+                        : [
+                            { label: 'Material', value: 'Canvas / Woven fabric' },
+                            { label: 'Dimensions', value: 'Approx. 38 × 28 × 12 cm' },
+                            { label: 'Weight', value: '~350g (empty)' },
+                            { label: 'Closure', value: 'Zipper / Magnetic snap' },
+                          ]
+                      ).map(item => (
                         <div key={item.label} className="flex justify-between py-2 border-b border-[#E2DDDA]/60 text-sm">
                           <dt className="text-[#6B6860]">{item.label}</dt>
                           <dd className="text-[#1A1A18] font-medium">{item.value}</dd>
@@ -313,9 +324,19 @@ export default function ProductDetail() {
 
                   {activeTab === 'care' && (
                     <div className="space-y-3 text-sm text-[#6B6860] leading-relaxed">
-                      <p>Wipe clean with a damp cloth. Do not machine wash.</p>
-                      <p>Store in a cool, dry place. Avoid prolonged exposure to direct sunlight.</p>
-                      <p>For deeper cleaning, use a mild soap solution and air dry completely before use.</p>
+                      {product.categoryId === '5' ? (
+                        <>
+                          <p>Hand wash recommended with warm soapy water and bottle brush.</p>
+                          <p>Keep lid open when not in use to ensure proper drying.</p>
+                          <p>Do not place in microwave or freezer.</p>
+                        </>
+                      ) : (
+                        <>
+                          <p>Wipe clean with a damp cloth. Do not machine wash.</p>
+                          <p>Store in a cool, dry place. Avoid prolonged exposure to direct sunlight.</p>
+                          <p>For deeper cleaning, use a mild soap solution and air dry completely before use.</p>
+                        </>
+                      )}
                     </div>
                   )}
 
